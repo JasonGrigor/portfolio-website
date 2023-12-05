@@ -4,6 +4,7 @@ html {
   width: 100%;
   height: 100%;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -12,4 +13,17 @@ body {
   background-attachment: fixed;
   background-size: cover;
   margin: 0;
+  text-align: center;
+  font-family: 'Century Gothic';
+  color: white;
 }
+
+h2 {
+  font-family: 'Old London';
+  text-align: center;
+  font-weight: 100;
+  color: navajowhite;
+  padding-bottom: 20px;
+  font-size: 4rem;
+}
+

@@ -1,0 +1,31 @@
+<div *ngIf=" project">
+
+  <h2> > {{project.name}} < </h2>
+
+  <div class=" project-container">
+    <div class="row">
+      <div class="project col-12">
+
+        <div class="thumbnail-wrapper">
+
+          <p class="project-description"
+             *ngIf="project.description">
+            {{ project.description }}
+          </p>
+
+          <div class="project-tags">
+            <span *ngFor="let tag of project.tags">
+              {{'#' + tag}}
+            </span>
+          </div>
+
+          <img class="project-image img-fluid" src="/assets/images/projects/_thumbnails/{{project.name}}_thumb.png" />
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<app-contact></app-contact>

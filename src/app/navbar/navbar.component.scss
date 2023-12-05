@@ -1,0 +1,30 @@
+
+.menu-bar {
+  z-index: 98;
+}
+
+.menu-item {
+  font-family: 'Old London';
+  margin: 10px 40px;
+  font-size: 2rem;
+  font-weight: 100;
+  transition: all .2s ease-in-out;
+  text-align: center;
+  z-index: 99;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  > a {
+    color: navajowhite;
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.menu-toggler-icon {
+  //background-image: url("../assets/images/menu-burger-button-icon.png");
+}

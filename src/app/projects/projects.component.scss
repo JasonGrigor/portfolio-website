@@ -1,0 +1,118 @@
+.gallery-container {
+  background-color: rgba(50,50,50,1.0);
+  padding: 20px 80px;
+  position: relative;
+  z-index: 0;
+
+  h2 {
+    font-family: 'Old London';
+    color: navajowhite;
+    padding-bottom: 20px;
+    font-size: 4rem;
+  }
+}
+
+.filters {
+  padding: 20px;
+  min-height: 120px;
+
+  .tag {
+    display: inline;
+    font-weight: 100;
+    font-size: 20px;
+    line-height: 30px;
+    margin: 12px;
+    transition: all .2s ease-in-out;
+
+    span {
+    }
+
+    &:hover {
+      cursor: pointer;
+      font-size: 24px;
+      font-weight: 200;
+    }
+  }
+
+  .inactive {
+    color: grey;
+  }
+}
+
+.project {
+  padding: 30px 15px;
+
+  a {
+      color: white;
+  }
+
+  .thumbnail-wrapper {
+    z-index: 3;
+  }
+
+  .thumbnail-wrapper:hover .project-image {
+    -webkit-filter: brightness(40%);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .thumbnail-wrapper:hover .project-name {
+    display: block;
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  .thumbnail-wrapper:hover .project-description {
+    display: block;
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  .thumbnail-wrapper:hover .project-tags {
+    display: block;
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  &-image {
+    z-index: 1;
+    min-width: 200px;
+    border: solid 2px white;
+  }
+
+  &-name {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    display: none;
+    transition: opacity .5s, visibility .5s;
+  }
+
+  &-description {
+    width: 80%;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    display: none;
+    transition: opacity .2s, visibility .2s;
+  }
+
+  &-tags {
+    font-size: 16px;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    display: none;
+    transition: opacity .2s, visibility .2s;
+  }
+}

@@ -1,0 +1,46 @@
+<div class="gallery-container">
+
+  <h2> > Projects < </h2>
+
+  <div class="filters">
+    <p>Show me:</p>
+    <div>
+      <span *ngFor="let tag of uniqueTags" class="tag"
+            (click)="toggleTag(tag)"
+            [class.inactive]="!activeTags.includes(tag)">
+        {{'#' + tag + 's'}}
+      </span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="project col-lg-4 col-md-6 col-sm-12"
+         *ngFor="let project of filteredProjects">
+
+      <a href="/project/{{project.id}}">
+
+        <div class="thumbnail-wrapper">
+
+
+          <p class="project-description"
+             *ngIf="project.description">
+            {{ project.description }}
+          </p>
+
+          <div class="project-tags">
+            <span *ngFor="let tag of project.tags"
+                  (click)="toggleTag(tag)"
+                  [class.inactive]="!activeTags.includes(tag)">
+              {{'#' + tag}}
+            </span>
+          </div>
+
+          <img class="project-image img-fluid" src="/assets/images/projects/_thumbnails/{{project.name}}_thumb.png" />
+        </div>
+
+      </a>
+    </div>
+
+  </div>
+
+</div>

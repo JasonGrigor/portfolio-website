@@ -1,5 +1,5 @@
 h2 {
-  font-family: 'Century Gothic';
+  font-family: 'Old London';
   text-align: center;
   font-size: 2em;
   font-weight: 100;
@@ -12,7 +12,6 @@ h2 {
   > h1 {
     text-align: center;
     font-family: 'Old London';
-    color: white;
     font-size: 10rem;
     font-weight: 100;
     margin-top: -30px;
@@ -25,25 +24,20 @@ h2 {
     text-align: center;
     font-size: 5em;
     font-weight: 100;
-    color: white;
     line-height: 80%;
   }
 
   > h3 {
     font-family: 'Century Gothic';
     text-align: center;
-    color: white;
     margin: 20px;
   }
-}
-
-.carousel-inner {
-  padding: 5% 10%;
 }
 
 .frame {
   padding: 18px;
   position: fixed;
+  z-index: -1;
 
   &.top {
     top: 0;
@@ -69,30 +63,10 @@ h2 {
       transform: scaleX(-1);
       float: right;
     }
+
+    &.left {
+      float: left;
+    }
   }
 }
 
-.menu-item {
-  font-family: 'Old London';
-  margin: 10px 40px;
-  font-size: 2rem;
-  font-weight: 100;
-  transition: all .2s ease-in-out;
-  text-align: center;
-
-  > a {
-    color: navajowhite;
-  }
-
-  > a:hover {
-    color: white;
-  }
-}
-
-.menu-item:hover {
-  transform: scale(1.2);
-}
-
-.menu-toggler-icon {
-  background-image: url("../assets/images/menu-burger-button-icon.png");
-}
