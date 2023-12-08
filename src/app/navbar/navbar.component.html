@@ -1,4 +1,12 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark menu-bar justify-content-center bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark menu-bar bg-dark sticky-top justify-content-center"
+     [ngClass]="{'navbar-stuck': isStuck}">
+
+  <a *ngIf="isStuck"
+     class="navbar-brand"
+     routerLink="/"
+     (click)="scrollToTop()">
+    Eclectic Legacy
+  </a>
 
   <button class="navbar-toggler"
           type="button" data-toggle="collapse"
@@ -9,18 +17,20 @@
     <span class="navbar-toggler-icon menu-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse justify-content-center"
+  <div class="collapse navbar-collapse"
+       [ngClass]="{'justify-content-center': !isStuck}"
        id="navbarTogglerDemo01">
     <ul class="navbar-nav center">
       <li class="nav-item menu-item">
-        <a class="nav-link" href="#projects"> > Projects < </a>
+        <a class="nav-link" href="home#projects"> > Projects < </a>
       </li>
       <li class="nav-item menu-item">
-        <a class="nav-link" href="#workExperience"> > Work Experience < </a>
+        <a class="nav-link" href="home#workExperience"> > Work Experience < </a>
       </li>
       <li class="nav-item menu-item">
-        <a class="nav-link" href="#contact"> > Contact < </a>
+        <a class="nav-link" href="home#contact"> > Contact < </a>
       </li>
     </ul>
   </div>
+
 </nav>

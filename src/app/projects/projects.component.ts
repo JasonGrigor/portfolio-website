@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Project } from '../project';
+import { Project } from '../types';
 import { ProjectService } from '../project.service';
 
 @Component({
@@ -14,20 +14,22 @@ export class ProjectsComponent {
   activeTags: string[] = [];
   filteredProjects: Project[] = [];
 
-  constructor(private projectService: ProjectService) { }
+  constructor(
+    private projectService: ProjectService
+  ) { }
 
   ngOnInit(): void {
     this.getProjects();
-    this.uniqueTags = this.extractUniqueTags();
-    this.updateFilteredProjects();
-    Object.assign(this.activeTags, this.uniqueTags);
-    this.updateFilteredProjects();
   }
-
 
   getProjects(): void {
     this.projectService.getProjects()
-      .subscribe(projects => this.projects = projects);
+      .subscribe(projects => {
+        this.projects = projects;
+        this.uniqueTags = this.extractUniqueTags();
+        Object.assign(this.activeTags, this.uniqueTags);
+        this.updateFilteredProjects();
+      });
   }
 
   private extractUniqueTags(): string[] {
@@ -35,9 +37,7 @@ export class ProjectsComponent {
 
     this.projects.forEach((project) => {
       project.tags.forEach((tag) => {
-        if (!uniqueTags.includes(tag)) {
-          uniqueTags.push(tag);
-        }
+        if (!uniqueTags.includes(tag)) uniqueTags.push(tag);
       });
     });
 

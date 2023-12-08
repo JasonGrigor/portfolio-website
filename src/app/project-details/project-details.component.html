@@ -1,29 +1,89 @@
-<div *ngIf=" project">
+<div class="project" *ngIf="project">
 
-  <h2> > {{project.name}} < </h2>
+  <div class="modal" *ngIf="selectedImagePath">
+    <div class="modal-content">
+      <!--<span class="close" (click)="closeModal()">&times;</span>-->
+      <img class="full-image"
+           (click)="closeModal()"
+           [src]="selectedImagePath" />
+    </div>
+  </div>
 
-  <div class=" project-container">
-    <div class="row">
-      <div class="project col-12">
+  <div class="project-container">
 
-        <div class="thumbnail-wrapper">
-
-          <p class="project-description"
-             *ngIf="project.description">
-            {{ project.description }}
-          </p>
-
-          <div class="project-tags">
-            <span *ngFor="let tag of project.tags">
-              {{'#' + tag}}
-            </span>
-          </div>
-
-          <img class="project-image img-fluid" src="/assets/images/projects/_thumbnails/{{project.name}}_thumb.png" />
-        </div>
-      </div>
+    <div class="banner-container">
+      <h2> > {{project.name}} < </h2>
+      <img class="project-banner img-fluid" [src]="project.imagePaths[0]" />
     </div>
 
+    <div class="project-tags">
+      <span *ngFor="let tag of project.tags">
+        {{'#' + tag}}
+      </span>
+    </div>
+
+    <div class="gallery">
+
+
+      <div class="scroll-container">
+        <div class="d-flex">
+
+          <div class="gallery-image-wrapper"
+               *ngFor="let path of project.thumbnailPaths; let i = index"
+               (click)="loadFullImage(i)">
+
+            <p class="prompt">
+              Click for full
+            </p>
+            <img class="gallery-image" [src]="path" />
+          </div>
+
+        </div>
+      </div>
+
+      <div class="arrow arrow-left"
+           *ngIf="showLeftArrow"
+           (click)="scrollGallery('left')">
+        <!--<span>&lt;</span>-->
+        <svg class="img-fluid"
+             width="50" height="50"
+             viewBox="0 0 200 200">
+          <path fill-rule="evenodd" stroke="rgb(52, 58, 64)" stroke-width="10px" stroke-linecap="round" stroke-linejoin="miter" fill="none"
+                d="M105.009,49.003 L29.162,93.013 L29.162,4.992 L105.009,49.003 Z" />
+          <path fill-rule="evenodd" stroke="rgb(52, 58, 64)" stroke-width="10px" stroke-linecap="round" stroke-linejoin="miter" fill="none"
+                d="M50.060,49.002 L4.992,75.408 L4.992,22.595 L50.060,49.002 Z" />
+        </svg>
+      </div>
+
+      <div class="arrow arrow-right"
+           *ngIf="showRightArrow"
+           (click)="scrollGallery('right')">
+        <!--<span>&gt;</span>-->
+        <svg class="img-fluid"
+             width="50" height="50"
+             viewBox="0 0 200 200">
+          <path fill-rule="evenodd" stroke="rgb(52, 58, 64)" stroke-width="10px" stroke-linecap="round" stroke-linejoin="miter" fill="none"
+                d="M105.009,49.003 L29.162,93.013 L29.162,4.992 L105.009,49.003 Z" />
+          <path fill-rule="evenodd" stroke="rgb(52, 58, 64)" stroke-width="10px" stroke-linecap="round" stroke-linejoin="miter" fill="none"
+                d="M50.060,49.002 L4.992,75.408 L4.992,22.595 L50.060,49.002 Z" />
+        </svg>
+      </div>
+
+    </div>
+
+
+    <div class="project-description"
+         *ngIf="project.description">
+      <p>{{ project.description }}</p>
+    </div>
+
+    <div class="links">
+      <h3>Explore more...</h3>
+      <a *ngFor="let link of project.links"
+         [href]="link">
+      ...more
+      </a>
+    </div>
   </div>
 
 </div>

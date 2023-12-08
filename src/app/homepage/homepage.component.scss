@@ -1,15 +1,31 @@
-.carousel-inner {
-  padding: 5% 10%;
-  height: 300px;
-
-  h2 {
-    font-size: 3rem;
-  }
+.exp-icon svg path {
+  color: darkslategrey;
 }
 
 .white-section {
-    color: darkslategrey;
+  color: darkslategrey;
   text-align: center;
   background-color: navajowhite;
-  padding: 50px 0px;
+  padding: 100px 20px;
+
+  .img-fluid {
+    margin: 20px
+  }
 }
+
+.carousel-inner {
+  padding: 5% 10%;
+  height: 500px;
+  position: relative;
+
+  .testimonial-text {
+    position: absolute;
+    font-size: 3rem;
+    font-family: 'Old London';
+    color: navajowhite;
+    top: 50%;
+    transform: translateY(50%);
+  }
+}
+
+

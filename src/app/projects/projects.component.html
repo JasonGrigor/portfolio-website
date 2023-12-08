@@ -19,8 +19,9 @@
 
       <a href="/project/{{project.id}}">
 
-        <div class="thumbnail-wrapper">
+        <h3>{{project.name}}</h3>
 
+        <div class="thumbnail-wrapper">
 
           <p class="project-description"
              *ngIf="project.description">
@@ -35,7 +36,7 @@
             </span>
           </div>
 
-          <img class="project-image img-fluid" src="/assets/images/projects/_thumbnails/{{project.name}}_thumb.png" />
+          <img class="project-image img-fluid" [src]="project.thumbnailPath" />
         </div>
 
       </a>

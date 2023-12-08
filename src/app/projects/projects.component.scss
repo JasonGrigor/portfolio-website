@@ -43,7 +43,7 @@
   padding: 30px 15px;
 
   a {
-      color: white;
+    color: white;
   }
 
   .thumbnail-wrapper {
@@ -70,12 +70,14 @@
     display: block;
     opacity: 1;
     cursor: pointer;
+    text-shadow: 1px 1px 10px black;
   }
 
   .thumbnail-wrapper:hover .project-tags {
     display: block;
     opacity: 1;
     cursor: pointer;
+    text-shadow: 1px 1px 10px black;
   }
 
   &-image {

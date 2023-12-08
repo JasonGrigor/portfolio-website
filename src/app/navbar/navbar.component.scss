@@ -1,11 +1,12 @@
 
 .menu-bar {
   z-index: 98;
+  transition: all .3s ease-in-out;
 }
 
 .menu-item {
   font-family: 'Old London';
-  margin: 10px 40px;
+  margin: 0px 40px;
   font-size: 2rem;
   font-weight: 100;
   transition: all .2s ease-in-out;
@@ -27,4 +28,26 @@
 
 .menu-toggler-icon {
   //background-image: url("../assets/images/menu-burger-button-icon.png");
+}
+
+.navbar-stuck .navbar-brand {
+  font-family: 'Old London';
+  font-size: 2.5rem;
+  font-weight: 100;
+  transition: all 0.3s ease-in-out;
+  text-align: left;
+}
+
+.navbar-stuck .navbar-nav.center {
+  transition: all 0.3s ease-in-out;
+  text-align: right;
+}
+
+.navbar-stuck .navbar-toggler-icon {
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-stuck {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
